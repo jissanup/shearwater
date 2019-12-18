@@ -1,0 +1,245 @@
+html{
+  font-family: Helvetica, Arial, Sans-Serif;
+  font-size:16px;
+}
+
+//modified styles
+.rt-image-upload.--modified{
+  margin:2%;
+  .rt-image-upload__controls{
+    display: flex;
+    border:0;
+    &:hover{
+      background: none;
+    }
+   
+    .rt-image-upload__actions{ 
+      width:50%;
+      position: static;
+      padding: 2% 8%;
+      .buttons{ 
+        display: block;
+        position: static;       
+         transform: none;
+         text-align: center;
+         display:flex;
+         button{
+           color: blue;
+           font-size:20px;
+           font-weight:bold;
+           border:0;
+           padding: 0;
+           opacity:0.6;
+           width: 50%;
+           margin:0;
+         }
+         .attach{
+           display: block;
+           text-align:left;
+           label{
+            cursor: pointer;
+           }
+           &:hover{           
+              opacity:1;
+           }
+         }
+         .delete{
+           display: none;
+         }
+      }
+      .rt-image-input__label{
+        position:static;
+        font-size: 20px;
+        color:#aaa;
+        padding: 0 0 15px 0;
+        display:block;
+        text-align: left;
+        font-weight:normal;
+      }
+    }
+    .rt-image-container{
+      border:4px dotted rgba(0,0,0, 0.12);
+      border-radius:1px;
+      width: 200px;
+      height: 120px;
+      input:valid{
+        pointer-events: none;
+      }
+      &:hover{
+        border-color:blue;
+        background-color:rgba(0,0,255, 0.15);
+      }
+    }
+  } 
+
+.rt-image-upload__controls.--has-image{
+  .rt-image-container{
+    border:0;
+    &:hover{
+      background-color:transparent;
+    }
+  }
+  .rt-image-upload__actions{
+   .delete{
+     display:block;
+     cursor: pointer;
+     color: red;
+     &:hover{
+       opacity: 1;
+       background: none;
+     }
+   }
+}
+  &:hover {
+    .rt-image-upload__actions{
+        position:  static;
+        background: none;
+    }
+  }
+}
+}
+
+
+//existing styles 
+.rt-image-upload{
+  width:480px; 
+}
+
+.rt-image-container{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+}
+
+.rt-image-container:after{
+      content:"";
+      display: block;
+      padding-top:100%;  
+}
+    
+img{  
+      display:none;
+      position:absolute;
+      min-height:100%;
+      width:100%;
+      object-fit:cover;
+      top:50%;
+      transform:translatey(-50%);
+}
+    
+.rt-image-upload__controls{
+    position:relative;
+    border:2px dotted rgba(0,0,0, 0.12);
+    border-radius:1px;
+    margin-top:20px;
+}
+
+.rt-image-upload__controls:hover{
+      border-color:blue;
+      background-color:rgba(0,0,255, 0.15);
+}
+
+.rt-image-upload__controls:hover .rt-image-input__label{
+        color:blue;
+}
+    
+.rt-image-input{
+      width:100%;
+      position:absolute;
+      top:0;
+      bottom:0;
+      right:0;
+      left:0;
+      opacity:0;
+}
+  
+.rt-image-input__label{
+      position:absolute;
+      bottom:24px;
+      left:0;
+      right:0;
+      text-align:center;
+      font-size:11px;
+      color:rgba(0,0,0,0.56);
+    }  
+
+.rt-image-upload__controls.--has-image{
+      border:none;
+      padding:0;
+      background-color:white;
+      margin-bottom:32px;
+}
+
+.rt-image-upload__controls.--has-image .rt-image-input{
+        z-index:-1;
+}
+
+.rt-image-upload__controls.--has-image img{
+    display:block;
+}   
+
+.rt-image-upload__controls.--has-image .rt-image-input__label{
+        display:none;
+        position:inline;
+        bottom:0;
+        text-align:left;
+        padding:12px;
+        color:white;
+        font-size:13px;
+        font-weight:bold;
+}
+
+.rt-image-upload__controls.--has-image:hover .rt-image-upload__actions{
+          position:absolute;
+          top:0;
+          bottom:0;
+          left:0;
+          right:0;
+          background-color:rgba(0,0,0, 0.7);
+  }
+  
+.rt-image-upload__controls.--has-image:hover .rt-image-upload__actions span{
+    display:block;
+}
+        
+.rt-image-upload__controls.--has-image:hover .rt-image-input__label{
+    display:block;
+} 
+  
+.buttons{
+  display: none;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+}
+
+button{
+  display:block;
+  font-size:13px;
+  border:1 px solid white;
+  border-radius: 1px;
+  background-color: transparent;
+  color: white;
+  line-height:26px;
+  width:88px;
+  opacity:.7;
+}
+
+button:hover{
+    background-color:rgba(255,255,255, 0.15);
+    opacity:1;
+}
+  
+button + button{
+    margin-top:12px;
+}
+  
+button.delete{
+    color:red;
+    border-color:red;
+}
+    
+button.delete:hover{
+    background-color:rgba(255,0,0, 0.15);
+}
